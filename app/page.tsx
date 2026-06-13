@@ -1,65 +1,129 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+    <main className="min-h-screen bg-slate-950 text-white">
+      <section className="mx-auto flex min-h-screen max-w-6xl flex-col px-6 py-8">
+        <header className="flex items-center justify-between border-b border-white/10 pb-6">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-300">
+              Long Island Hiring Hub
+            </p>
+            <h1 className="mt-2 text-2xl font-bold">LI Hiring Hub</h1>
+          </div>
+
+          <nav className="hidden gap-6 text-sm text-slate-300 md:flex">
+            <a href="#employers" className="hover:text-white">
+              Employers
+            </a>
+            <a href="#recruiters" className="hover:text-white">
+              Recruiters
+            </a>
+            <a href="#candidates" className="hover:text-white">
+              Candidates
+            </a>
+          </nav>
+        </header>
+
+        <section className="flex flex-1 flex-col justify-center py-20">
+          <div className="max-w-4xl">
+            <p className="mb-5 inline-flex rounded-full border border-blue-400/30 bg-blue-400/10 px-4 py-2 text-sm font-medium text-blue-200">
+              Built for Nassau, Suffolk, and Long Island employers.
+            </p>
+
+            <h2 className="text-5xl font-bold tracking-tight md:text-7xl">
+              Local jobs. Vetted recruiters. Better hires.
+            </h2>
+
+            <p className="mt-8 max-w-2xl text-xl leading-8 text-slate-300">
+              LI Hiring Hub connects Long Island employers with qualified
+              candidates and trusted local recruiters. Post a role, find talent,
+              or join our recruiter network.
+            </p>
+
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <a
+                href="#employers"
+                className="rounded-xl bg-blue-500 px-6 py-4 text-center font-semibold text-white shadow-lg shadow-blue-500/20 hover:bg-blue-400"
+              >
+                I’m an Employer
+              </a>
+
+              <a
+                href="#recruiters"
+                className="rounded-xl border border-white/15 px-6 py-4 text-center font-semibold text-white hover:bg-white/10"
+              >
+                I’m a Recruiter
+              </a>
+
+              <a
+                href="#candidates"
+                className="rounded-xl border border-white/15 px-6 py-4 text-center font-semibold text-white hover:bg-white/10"
+              >
+                I’m Looking for Work
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section className="grid gap-6 pb-16 md:grid-cols-3">
+          <div
+            id="employers"
+            className="rounded-2xl border border-white/10 bg-white/5 p-6"
+          >
+            <h3 className="text-xl font-bold">For Employers</h3>
+            <p className="mt-4 text-slate-300">
+              Post Long Island roles and connect with vetted recruiters who
+              understand the local market.
+            </p>
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="mailto:info@lihiringhub.com?subject=Employer%20Interest"
+              className="mt-6 inline-block font-semibold text-blue-300 hover:text-blue-200"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
+              Join employer waitlist →
+            </a>
+          </div>
+
+          <div
+            id="recruiters"
+            className="rounded-2xl border border-white/10 bg-white/5 p-6"
+          >
+            <h3 className="text-xl font-bold">For Recruiters</h3>
+            <p className="mt-4 text-slate-300">
+              Apply to join our Long Island recruiter marketplace and access
+              local employer searches.
+            </p>
             <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="mailto:info@lihiringhub.com?subject=Recruiter%20Application"
+              className="mt-6 inline-block font-semibold text-blue-300 hover:text-blue-200"
             >
-              Learning
-            </a>{" "}
-            center.
+              Apply as recruiter →
+            </a>
+          </div>
+
+          <div
+            id="candidates"
+            className="rounded-2xl border border-white/10 bg-white/5 p-6"
+          >
+            <h3 className="text-xl font-bold">For Candidates</h3>
+            <p className="mt-4 text-slate-300">
+              Looking for work on Long Island? Join our early candidate list and
+              get matched with local opportunities.
+            </p>
+            <a
+              href="mailto:info@lihiringhub.com?subject=Candidate%20Interest"
+              className="mt-6 inline-block font-semibold text-blue-300 hover:text-blue-200"
+            >
+              Join candidate list →
+            </a>
+          </div>
+        </section>
+
+        <footer className="border-t border-white/10 py-6 text-sm text-slate-400">
+          <p>
+            © {new Date().getFullYear()} LI Hiring Hub. A local hiring
+            marketplace for Long Island employers, recruiters, and candidates.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+        </footer>
+      </section>
+    </main>
   );
 }
